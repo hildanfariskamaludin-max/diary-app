@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+
+import DiaryListScreen from './src/screens/DiaryListScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hildan guanteng pool</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView
+        style={{ flex: 1 }}
+        edges={['top', 'left', 'right']}
+      >
+        <DiaryListScreen />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#7fe8a8',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
